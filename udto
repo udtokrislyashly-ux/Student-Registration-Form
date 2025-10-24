@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLCC Student Registration Form</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #5a3b47;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffb6c1, #ffcce0);
+      text-align: center;
+      padding: 40px;
+      color: white;
+      border-bottom: 5px solid #ff99cc;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 600px;
+      background: white;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
+      border: 3px solid #ffd6e8;
+      position: relative;
+    }
+
+    .container::before {
+      content: "🎀";
+      font-size: 2em;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff0f5;
+      border-radius: 50%;
+      padding: 5px 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 15px 0 5px;
+      color: #d15d88;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ffcce0;
+      border-radius: 10px;
+      font-size: 1em;
+      outline: none;
+      background-color: #fff9fc;
+      color: #5a3b47;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #ff99cc;
+      box-shadow: 0 0 8px rgba(255, 182, 193, 0.6);
+    }
+
+    button {
+      background-color: #ff99cc;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff80bf;
+      transform: scale(1.03);
+    }
+
+    .thank-you {
+      display: none;
+      text-align: center;
+      font-size: 1.4em;
+      color: #c84b7b;
+      font-weight: 600;
+      margin-top: 30px;
+      background-color: #fff0f8;
+      border-radius: 15px;
+      padding: 20px;
+      border: 2px dashed #ffb6c1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #a85b78;
+      background-color: #ffe6f0;
+      border-top: 3px solid #ff99cc;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LLCC Student Registration Form 🎀</h1>
+    <p>Welcome! Please fill out your details below.</p>
+  </header>
+
+  <div class="container">
+    <form id="registrationForm">
+      <label for="fname">Full Name:</label>
+      <input type="text" id="fname" name="fname" placeholder="Enter your full name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Prefer not to say">Prefer not to say</option>
+      </select>
+
+      <label for="grade">Grade/Year Level:</label>
+      <input type="text" id="grade" name="grade" placeholder="Enter your grade or year level" required>
+
+      <label for="section">Section:</label>
+      <input type="text" id="section" name="section" placeholder="Enter your section" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+
+      <button type="submit">Submit 💌</button>
+    </form>
+
+    <div class="thank-you" id="thankYouMessage">
+      🎀 Thank you for registering at LLCC! <br>
+      We’re so excited to have you join us. 💖
+    </div>
+  </div>
+
+  <footer>
+    Made with 💕 by LLCC | 2025
+  </footer>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const thankYou = document.getElementById('thankYouMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent form from reloading page
+      form.style.display = 'none';
+      thankYou.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
